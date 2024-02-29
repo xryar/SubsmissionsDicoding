@@ -10,10 +10,9 @@ import com.example.subsmissionsdicoding.databinding.ItemRowBinding
 class ListGameAdapter(private val listGame: ArrayList<Game>) : RecyclerView.Adapter<ListGameAdapter.ListViewHolder>() {
 
 
-    class ListViewHolder(var binding: ItemRowBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ListViewHolder(var binding: ItemRowBinding) : RecyclerView.ViewHolder(binding.root)
 
-    }
-
+    //untuk menghubungkan layout item
     override fun onCreateViewHolder(
         viewGroup: ViewGroup,
         viewType: Int
@@ -22,6 +21,7 @@ class ListGameAdapter(private val listGame: ArrayList<Game>) : RecyclerView.Adap
         return ListViewHolder(binding)
     }
 
+    //menerapkan datasource sesuai posisinya
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (name, description, photo) = listGame[position]
         holder.binding.imgItem.setImageResource(photo)
@@ -34,5 +34,6 @@ class ListGameAdapter(private val listGame: ArrayList<Game>) : RecyclerView.Adap
         }
     }
 
+    //menetapkan ukuran dari jumlah data yang ingin ditampilkan.
     override fun getItemCount(): Int = listGame.size
 }
